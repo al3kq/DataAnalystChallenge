@@ -3,9 +3,10 @@
 I used pandas dataframes to create normalized tables from the purchase example JSON file. I then created tables in postgresql and inputed the appropriate data to these tables.
 
 ## Examples of These DataFrames
-<div>
-<img src = "Pictures/order_df.png" width="400" style="float:left;margin-top:50px"/>
-</div>
+
+%<div>
+%<img src = "Pictures/order_df.png" width="400" style="float:left;margin-top:50px"/>
+%</div>
 
 <div>
    <br>
