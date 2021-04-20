@@ -183,6 +183,28 @@ GROUP BY 1;
     </tr>
 </table>
 
+### Customers By Location
+~~~mysql
+SELECT city, COUNT(city), countrycode
+FROM address
+GROUP BY city, countrycode
+ORDER BY 2;;
+~~~
+
+<p>Query Output:</p>
+<table style="width:100%">
+    <tr>
+        <th>city</th>
+        <th>count</th>
+	<th>countrycode</th>
+    </tr>
+    <tr>
+        <td>Skopje</td>
+        <td>1</td>
+	<td>MK</td>
+    </tr>
+</table>
+
 
 
 ## Parsing JSON File to DataFrames
