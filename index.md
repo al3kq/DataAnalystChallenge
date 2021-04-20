@@ -45,7 +45,7 @@ ORDER BY 1 DESC;
 ### Revenue Per Hour
 
 ~~~mysql
-SELECT date_trunc('hour',ord.created) AS Day, CONCAT('$',(CAST(SUM(comm.amount) AS float)/100)) AS RevPerHour
+SELECT date_trunc('hour',ord.created) AS Hour, CONCAT('$',(CAST(SUM(comm.amount) AS float)/100)) AS RevPerHour
 FROM public.order ord INNER JOIN (SELECT payload_id, com.amount
     FROM payload payl, (SELECT ordSum.ordersummary_id, total.amount
     FROM ordersummary ordSum INNER JOIN total ON (ordSum.total_id = total.total_id)) AS com
@@ -57,7 +57,7 @@ ORDER BY 1 DESC;
 <p>Query Output:</p>
 <table style="width:100%">
     <tr>
-        <th>day</th>
+        <th>hour</th>
         <th>revperhour</th>
     </tr>
     <tr>
