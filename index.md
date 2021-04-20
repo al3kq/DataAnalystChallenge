@@ -275,7 +275,7 @@ df = df.drop(columns=dfOfferConfigProducts.columns)
 TableFormatList = [[dfItems,4,999],[dfTaxLines,3,998],[dfShippingLines,3,997],[dfOrderLineItems,3,996],[dfOrderSummaryLineItems,4, 995],[dfFinancialLinesTarget,5, 994]]
 
 ~~~
-Using the Node class, I define a root note for the entire order. This node's children are found by parsing through the column names created in flatten_json(). Reflationary ID columns are initialized for node children. 
+Using the Node class, I define a root note for the entire order. This node's children are found by parsing through the column names created in flatten_json(). Relationary ID columns are initialized for node children. 
 ~~~python
 def defineRelations(colList, root, it, master):
 	for col in colList:
