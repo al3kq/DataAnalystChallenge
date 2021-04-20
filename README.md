@@ -1,2 +1,0 @@
-# DataAnalystChallenge
-DataAnalystChallenge
