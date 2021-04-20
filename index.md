@@ -15,7 +15,9 @@ I used pandas dataframes to create normalized tables from the purchase example J
 
 Below are my requested SQL Queries and their output.
 
-When looking at the formatted prices, I noticed that the prices values were in cents. All revenue and costs were converted to dollars.                                     
+When looking at the formatted prices, I noticed that the prices values were in cents. All revenue and costs were converted to dollars.  
+
+I focused on using the purchasesnapshot and ordersummary tables to preform most of the queries.
 
 ### Revenue Per Day
 
