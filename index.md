@@ -6,15 +6,9 @@ I used pandas dataframes to create normalized tables from the purchase example J
 
 ![first_df](Pictures/order_df.png)
 
-<div>
-   <br>
-<img src = "Pictures/second_df.png" width="500" style="float:right"/>
-   <br>
-</div>
+![second_df](Pictures/second_df.png)
 
-<div>
-<img src = "Pictures/third_df.png" width="400" style="float:left;margin-top:50px"/>
-</div>
+![third_df](Pictures/third_df.png)
 
 
 ### SQL Queries:
@@ -23,7 +17,7 @@ Below are my requested SQL Queries and their output.
 
 When looking at the formatted prices, I noticed that the prices values were in cents. All revenue and costs were converted to dollars.                                     
 
-##### Revenue Per Day
+### Revenue Per Day
 
 ~~~mysql
 SELECT date_trunc('day',ord.created) AS Day, CONCAT('$',(CAST(SUM(comm.amount) AS float)/100)) AS RevPerDay
@@ -48,7 +42,7 @@ ORDER BY 1 DESC;
 </table>
                                
 
-##### Revenue Per Hour
+### Revenue Per Hour
 
 ~~~mysql
 SELECT date_trunc('hour',ord.created) AS Day, CONCAT('$',(CAST(SUM(comm.amount) AS float)/100)) AS RevPerHour
@@ -72,7 +66,7 @@ ORDER BY 1 DESC;
     </tr>
 </table>
                                
-##### Revenue Per Product
+### Revenue Per Product
 ~~~mysql
 SELECT items.title AS item_title, CONCAT('$',(CAST(SUM(price*quantity) AS FLOAT)/100)) AS RevPerProd
 FROM public.order ord, payload pl, purchaseintentsnapshot purInt, items
@@ -118,7 +112,7 @@ ORDER BY RevPerProd DESC;
     </tr>
 </table>
 
-##### Fees Per Day
+### Fees Per Day
 ~~~mysql
 SELECT date_trunc('day',oo.created) AS day, CONCAT('$',(CAST(SUM(fee_os_pay.amount) AS float)/100)) AS FeesPerHour
 FROM public.order oo INNER JOIN (SELECT payload_id, fee_os.amount
@@ -140,7 +134,7 @@ ORDER BY 2 DESC;
     </tr>
 </table>
 
-##### Fees Per Hour
+### Fees Per Hour
 ~~~mysql
 SELECT date_trunc('hour',oo.created) AS hour, CONCAT('$',(CAST(SUM(fee_os_pay.amount) as float)/100)) AS FeesPerHour
 FROM public.order oo INNER JOIN (SELECT payload_id, fee_os.amount
@@ -163,7 +157,7 @@ ORDER BY 2 DESC;
     </tr>
 </table>
 
-##### Sales Per 2 Hour Time Intervals
+### Sales Per 2 Hour Time Intervals
 ~~~mysql
 SELECT to_timestamp(FLOOR((EXTRACT('epoch' from ord.created)/ 7200)) *7200) AS Hourinter, SUM(perItem.item_quan) AS Sales
 FROM public.order ord, (SELECT items.title AS item_title, SUM(items.quantity) AS item_quan
