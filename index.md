@@ -4,9 +4,7 @@ I used pandas dataframes to create normalized tables from the purchase example J
 
 ## Examples of These DataFrames
 
-%<div>
-%<img src = "Pictures/order_df.png" width="400" style="float:left;margin-top:50px"/>
-%</div>
+![first_df](Pictures/order_df.png)
 
 <div>
    <br>
