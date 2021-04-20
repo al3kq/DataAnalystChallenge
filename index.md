@@ -1,4 +1,4 @@
-## Data Analyst Challenge - Andrew Lee
+# Data Analyst Challenge - Andrew Lee
 
 I used pandas dataframes to create normalized tables from the purchase example JSON file. I then created tables in postgresql and inputed the appropriate data to these tables.
 
@@ -11,7 +11,7 @@ I used pandas dataframes to create normalized tables from the purchase example J
 ![third_df](Pictures/third_df.png)
 
 
-### SQL Queries:
+## SQL Queries:
 
 Below are my requested SQL Queries and their output.
 
