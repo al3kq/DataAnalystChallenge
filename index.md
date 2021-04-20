@@ -21,7 +21,7 @@ I focused on using the purchasesnapshot and ordersummary tables to preform most 
 
 ### Revenue Per Day
 
-~~~mysql
+~~~sql
 SELECT date_trunc('day',ord.created) AS Day, CONCAT('$',(CAST(SUM(comm.amount) AS float)/100)) AS RevPerDay
 FROM public.order ord INNER JOIN (SELECT payload_id, com.amount
     FROM payload payl, (SELECT ordSum.ordersummary_id, total.amount
@@ -46,7 +46,7 @@ ORDER BY 1 DESC;
 
 ### Revenue Per Hour
 
-~~~mysql
+~~~sql
 SELECT date_trunc('hour',ord.created) AS Hour, CONCAT('$',(CAST(SUM(comm.amount) AS float)/100)) AS RevPerHour
 FROM public.order ord INNER JOIN (SELECT payload_id, com.amount
     FROM payload payl, (SELECT ordSum.ordersummary_id, total.amount
@@ -69,7 +69,7 @@ ORDER BY 1 DESC;
 </table>
                                
 ### Revenue Per Product
-~~~mysql
+~~~sql
 SELECT items.title AS item_title, CONCAT('$',(CAST(SUM(price*quantity) AS FLOAT)/100)) AS RevPerProd
 FROM public.order ord, payload pl, purchaseintentsnapshot purInt, items
 WHERE ord.payload_id = pl.payload_id AND pl.purchaseintentsnapshot_id = purInt.purchaseintentsnapshot_id 
@@ -115,7 +115,7 @@ ORDER BY RevPerProd DESC;
 </table>
 
 ### Fees Per Day
-~~~mysql
+~~~sql
 SELECT date_trunc('day',oo.created) AS day, CONCAT('$',(CAST(SUM(fee_os_pay.amount) AS float)/100)) AS FeesPerHour
 FROM public.order oo INNER JOIN (SELECT payload_id, fee_os.amount
 FROM payload pp, (SELECT os.ordersummary_id, feetotal.amount
@@ -137,7 +137,7 @@ ORDER BY 2 DESC;
 </table>
 
 ### Fees Per Hour
-~~~mysql
+~~~sql
 SELECT date_trunc('hour',oo.created) AS hour, CONCAT('$',(CAST(SUM(fee_os_pay.amount) as float)/100)) AS FeesPerHour
 FROM public.order oo INNER JOIN (SELECT payload_id, fee_os.amount
 FROM payload pp, (SELECT os.ordersummary_id, feetotal.amount
@@ -160,7 +160,7 @@ ORDER BY 2 DESC;
 </table>
 
 ### Sales Per 2 Hour Time Intervals
-~~~mysql
+~~~sql
 SELECT to_timestamp(FLOOR((EXTRACT('epoch' from ord.created)/ 7200)) *7200) AS Hourinter, SUM(perItem.item_quan) AS Sales
 FROM public.order ord, (SELECT items.title AS item_title, SUM(items.quantity) AS item_quan
 	FROM public.order ord, payload pl, purchaseintentsnapshot purInt, items
@@ -184,7 +184,7 @@ GROUP BY 1;
 </table>
 
 ### Customers By Location
-~~~mysql
+~~~sql
 SELECT city, COUNT(city), countrycode
 FROM address
 GROUP BY city, countrycode
