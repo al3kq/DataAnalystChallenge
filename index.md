@@ -247,7 +247,7 @@ def keyGetter_seed(seed):
 
 ~~~
 
-Began by flattening the JSON to convert the nested columns and lists to a period separated single column value. Then passed this into json_normalize to return a flattened. 
+Began by flattening the JSON to convert the nested columns and lists to a period separated single column value. Then passed this into json_normalize to return a flattened. Json_normalize cannot handle lists well on it's own.
 
 ~~~python
 def flatten_json(y):
