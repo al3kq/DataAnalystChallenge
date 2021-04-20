@@ -313,7 +313,6 @@ def defineRelations(colList, root, it, master):
 					master.append(newNode.name)
 					root.children.append(newNode)
 			else:
-				# print(col)
 				newNode = Node()
 				newNode.parent = root
 				newNode.name = col
