@@ -1,11 +1,11 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XWRNTZ2REW"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S0BHGK6KM8"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-XWRNTZ2REW');
+  gtag('config', 'G-S0BHGK6KM8');
 </script>
 # Data Analyst Challenge - Andrew Lee
 
