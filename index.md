@@ -1,3 +1,12 @@
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XWRNTZ2REW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XWRNTZ2REW');
+</script>
 # Data Analyst Challenge - Andrew Lee
 
 I used pandas dataframes to create normalized tables from the purchase example JSON file. I then created tables in postgresql and inputed the appropriate data to these tables.
