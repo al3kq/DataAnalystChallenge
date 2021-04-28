@@ -1,4 +1,5 @@
 # Data Analyst Challenge - Andrew Lee
+<head>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XWRNTZ2REW"></script>
 <script>
@@ -8,6 +9,7 @@
 
   gtag('config', 'G-XWRNTZ2REW');
 </script>
+</head>
 
 I used pandas dataframes to create normalized tables from the purchase example JSON file. I then created tables in postgresql and inputed the appropriate data to these tables.
 
